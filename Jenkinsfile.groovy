@@ -3,8 +3,7 @@ node {
 
     stage('Preparation') {
         git 'https://github.com/Alfresco/jk-jbehave-demo.git'
-        mvnHome = tool 'M3',
-        mavenSettingsConfig: 'my-maven-settings'
+        mvnHome = tool 'M3'
     }
 
     stage('Build') {
