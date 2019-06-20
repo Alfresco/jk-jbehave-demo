@@ -9,7 +9,7 @@ node {
     stage('Build') {
         configFileProvider(
                 [configFile(fileId: 'my-maven-settings', variable: 'MAVEN_SETTINGS')]) {
-            sh "'${mvnHome}/bin/mvn' -s $MAVEN_SETTINGS clean install"
+            sh 'mvn -s $MAVEN_SETTINGS clean install'
         }
 
     }
