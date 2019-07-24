@@ -17,7 +17,7 @@ node {
     stage('configureTest'){
         dir('scripts') {
             sh "echo ++++++++++++ executing script."
-            sh "test-script.sh"
+            sh "./test-script.sh"
         }
 
 
