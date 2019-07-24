@@ -14,12 +14,18 @@ node {
 
     }
 
+    stage('configureTest'){
+        dir('scripts') {
+            sh "echo ++++++++++++ executing script."
+            sh "test-script.sh"
+        }
+
+
+    }
     stage('Results') {
 
         junit '**/target/surefire-reports/*.xml'
 
-        sh "echo ++++++++++++ executing script."
-        sh "test-script.sh"
         // publish html
         publishHTML (target: [
                 allowMissing: false,
