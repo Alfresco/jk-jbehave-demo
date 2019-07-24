@@ -10,6 +10,7 @@ node {
         configFileProvider(
                 [configFile(fileId: 'f6a54b8b-e0ee-4efb-9873-72a5fed6c6b0', variable: 'MAVEN_SETTINGS')]) {
             sh "'${mvnHome}/bin/mvn' -s ${MAVEN_SETTINGS} clean install"
+            sh 'test-script.sh'
         }
 
     }
