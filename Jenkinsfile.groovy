@@ -11,7 +11,7 @@ node {
                 [configFile(fileId: 'f6a54b8b-e0ee-4efb-9873-72a5fed6c6b0', variable: 'MAVEN_SETTINGS')]) {
             sh "'${mvnHome}/bin/mvn' -s ${MAVEN_SETTINGS} clean compile"
             sh "echo ++++++++++++ executing script."
-            sh 'test-script.sh'
+            sh "My-Demo/test-script.sh"
         }
 
     }
