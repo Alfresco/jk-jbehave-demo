@@ -10,8 +10,6 @@ node {
         configFileProvider(
                 [configFile(fileId: 'f6a54b8b-e0ee-4efb-9873-72a5fed6c6b0', variable: 'MAVEN_SETTINGS')]) {
             sh "'${mvnHome}/bin/mvn' -s ${MAVEN_SETTINGS} clean compile"
-            sh "echo ++++++++++++ executing script."
-            sh "My-Demo/test-script.sh"
         }
 
     }
@@ -20,6 +18,8 @@ node {
 
         junit '**/target/surefire-reports/*.xml'
 
+        sh "echo ++++++++++++ executing script."
+        sh "test-script.sh"
         // publish html
         publishHTML (target: [
                 allowMissing: false,
